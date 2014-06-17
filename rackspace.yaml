@@ -1,0 +1,33 @@
+schema-version: 1.0.0
+application-family: Misc
+application-name: ownCloud
+application-version: 6.0
+flavor: Single Linux server running ownCloud
+flavor-weight: 1
+reach-info:
+  tattoo: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/owncloud-tattoo.png
+  icon-20x20: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/owncloud-20x20.png
+hidden_outputs:
+  - private_key
+  - owncloud_password
+  - mysql_root_password
+  - owncloud_db_password
+abstract: |
+  Single Linux server running [ownCloud](http://owncloud.org/).
+instructions: |
+  #### Getting Started
+  If you are new to [ownCloud](http://owncloud.org/), check out their
+  documentation on how to use the [web
+  interface](http://doc.owncloud.org/server/6.0/user_manual/webinterface.html).
+
+  #### Accessing your Deployment
+  Use the ownCloud URL provided to access your deployment. You will get a
+  certificate warning since it's self signed. Login with the ownCloud username
+  and password provided.
+
+  #### Logging in via SSH
+  The private key provided in the passwords section can be used to login as
+  root via SSH.  We have an article on how to use these keys with [Mac OS X and
+  Linux](http://www.rackspace.com/knowledge_center/article/logging-in-with-a-ssh-private-key-on-linuxmac)
+  as well as [Windows using
+  PuTTY](http://www.rackspace.com/knowledge_center/article/logging-in-with-a-ssh-private-key-on-windows).
