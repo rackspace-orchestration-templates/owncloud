@@ -182,4 +182,4 @@ outputs:
 
   owncloud_password:
     value: { get_attr: [owncloud_password, value] }
-    description: "ownCloud Password
+    description: "ownCloud Password"
