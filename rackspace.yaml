@@ -1,7 +1,7 @@
 schema-version: 1.0.0
 application-family: Miscellaneous
 application-name: ownCloud
-application-version: 6.0
+application-version: 7.0
 flavor: Single Linux server
 flavor-weight: 1
 reach-info:
@@ -16,7 +16,7 @@ instructions: |
   #### Getting Started
   If you are new to [ownCloud](http://owncloud.org/), check out their
   documentation on how to use the [web
-  interface](http://doc.owncloud.org/server/6.0/user_manual/webinterface.html).
+  interface](http://doc.owncloud.org/server/7.0/user_manual/webinterface.html).
 
   #### Accessing your Deployment
   Use the ownCloud URL provided to access your deployment. You will get a
