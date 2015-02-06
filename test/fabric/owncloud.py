@@ -1,8 +1,7 @@
 import re
 from fabric.api import env, run, hide, task
-from envassert import detect, file, group, package, port, process, service, \
-    user
-from hot.utils.test import get_artifacts, http_check
+from envassert import detect, file, port, process, service
+from hot.utils.test import get_artifacts
 
 
 def owncloud_is_responding():
