@@ -121,7 +121,7 @@ resources:
       save_private_key: true
 
   owncloud_server:
-    type: "Rackspace::Cloud::Server"
+    type: "OS::Nova::Server"
     properties:
       name: ownCloud
       flavor: { get_param: flavor }
@@ -129,6 +129,13 @@ resources:
       key_name: { get_resource: ssh_key }
       metadata:
         rax-heat: { get_param: "OS::stack_id" }
+      config_drive: "true"
+      user_data_format: RAW
+      user_data: |
+        #cloud-config
+        apt_sources:
+         - source: "ppa:ondrej/php5-oldstable"
+        package_update: true
 
   owncloud_server_setup:
     type: "OS::Heat::ChefSolo"

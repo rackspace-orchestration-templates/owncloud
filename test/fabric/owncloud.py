@@ -11,6 +11,8 @@ def owncloud_is_responding():
         if re.search('web services under your control', page):
             return True
         else:
+            print "oops, didn't find desired text in page."
+            print "page contents was: {}".format(page)
             return False
 
 
