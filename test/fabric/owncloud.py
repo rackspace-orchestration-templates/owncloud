@@ -1,27 +1,18 @@
 import re
 from fabric.api import env, run, hide, task
 from envassert import detect, file, port, process, service
-from hot.utils.test import get_artifacts
-
-
-def owncloud_is_responding():
-    with hide('running', 'stdout'):
-        wget_cmd = 'wget --quiet --output-document - http://localhost/'
-        page = run(wget_cmd)
-        if re.search('web services under your control', page):
-            return True
-        else:
-            print "oops, didn't find desired text in page."
-            print "page contents was: {}".format(page)
-            return False
+from hot.utils.test import get_artifacts, http_check
 
 
 @task
 def check():
     env.platform_family = detect.detect()
 
-    assert file.exists("/etc/apache2/sites-enabled/owncloud.conf"), \
-        '/etc/apache2/sites-enabled/owncloud.conf does not exist'
+    site = 'http://{0}/owncloud'.format(env.host)
+    string = 'Files - ownCloud'
+
+    assert file.exists("/var/www/owncloud/config/autoconfig.php"), \
+        '/var/www/owncloud/config/autoconfig.php does not exist'
 
     assert port.is_listening(3306), 'port 3306/mysqld is not listening'
     assert port.is_listening(25), 'port 25/master is not listening'
@@ -34,7 +25,7 @@ def check():
     assert service.is_enabled("apache2"), 'service apache2 is not enabled'
     assert service.is_enabled("mysql"), 'service mysql is not enabled'
 
-    assert owncloud_is_responding(), 'owncloud did not respond as expected'
+    assert http_check(site, string), 'owncloud did not respond as expected'
 
 
 @task
