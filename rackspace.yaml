@@ -30,3 +30,5 @@ instructions: |
   as well as [Windows using
   PuTTY](http://www.rackspace.com/knowledge_center/article/logging-in-with-a-ssh-private-key-on-windows).
 user-input-required: true
+description: |
+  Single Linux server running [ownCloud](https://owncloud.org/).
