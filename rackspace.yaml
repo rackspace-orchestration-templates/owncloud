@@ -11,7 +11,8 @@ hidden_outputs:
   - private_key
   - owncloud_password
 abstract: |
-  Single Linux server running [ownCloud](http://owncloud.org/).
+  ownCloud is an open-source software that provides private file sharing and
+  hosting.
 instructions: |
   #### Getting Started
   If you are new to [ownCloud](http://owncloud.org/), check out their
